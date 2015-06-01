@@ -1,0 +1,331 @@
+/* 
+Total Recall Stylesheet v1.0
+Last Updated: 2015-03-31
+Author: William R.A.D. Funk - http://Williamradfunk.com/portfolio/code/hidden-image/
+Notes:Flip Functionality adapted from code by David Walsh @ http://davidwalsh.name/css-flip/
+Notes:Animal artwork incorporated from the following site and its sublinks:
+    https://www.iconfinder.com/icons/6281/d3lphin_dolphin_icon#size=128
+    https://www.iconfinder.com/icons/8813/animal_butterfly_papillon_staroffice_summerbird_icon#size=128
+    http://www.iconsmaster.com/
+    https://www.iconfinder.com/icons/19226/animal_turtle_icon#size=256
+    https://www.iconfinder.com/icons/19223/animal_elephant_icon#size=256
+    https://www.iconfinder.com/icons/40290/animal_bird_bullfinch_twitter_icon#size=256
+Notes:Card backing artwork supplied by Andrea Acosta Duarte
+*/
+body
+{
+    background-color: #FF9933;
+}
+h1
+{
+    text-align: center;
+    font-family: Arial;
+    font-size: 45px;
+    color: #000000;
+}
+ul
+{
+    margin: 40px auto;
+    width: 100%;
+    height: 488px;
+    list-style-type: none;
+    border: 1px solid #000000;
+    background-color: #FFFFFF;
+}
+ul li
+{
+    float: left;
+    width: 24.5%;
+    height: 120px;
+    background-image: none;
+    border: 1px solid #000000;
+}
+#wrapper
+{
+    width: 488px;
+    margin: 0 auto;
+}
+#card_one .back
+{
+    background-image: url(../images/card_front_01.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+#card_two .back
+{
+    background-image: url(../images/card_front_02.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+#card_three .back
+{
+    background-image: url(../images/card_front_03.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+#card_four .back
+{
+    background-image: url(../images/card_front_04.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+#card_five .back
+{
+    background-image: url(../images/card_front_05.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+#card_six .back
+{
+    background-image: url(../images/card_front_06.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+#card_seven .back
+{
+    background-image: url(../images/card_front_07.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+#card_eight .back
+{
+    background-image: url(../images/card_front_08.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+#card_nine .back
+{
+    background-image: url(../images/card_front_01.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+#card_ten .back
+{
+    background-image: url(../images/card_front_02.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+#card_eleven .back
+{
+    background-image: url(../images/card_front_03.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+#card_twelve .back
+{
+    background-image: url(../images/card_front_04.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+#card_thirteen .back
+{
+    background-image: url(../images/card_front_05.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+#card_fourteen .back
+{
+    background-image: url(../images/card_front_06.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+#card_fifteen .back
+{
+    background-image: url(../images/card_front_07.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+#card_sixteen .back
+{
+    background-image: url(../images/card_front_08.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+.front
+{
+    background: url(../images/card_cover.png) 0 0 no-repeat;
+    
+}
+#score_board
+{
+    margin: 20px auto;
+    width: 100%;
+    height: 200px;
+    border: 2px solid #000000;
+}
+#score_description
+{
+    float: left;
+    margin: 80px 0px;
+    width: 243px;
+    height: 20px;
+    text-align: center;
+    font-family: Arial;
+    font-size: 20px;
+}
+#score_keeper
+{
+    float: left;
+    margin: 85px 0px;
+    width: 243px;
+    height: 20px;
+    text-align: center;
+    font-family: Arial;
+    font-size: 30px;
+}
+#btn_box
+{
+    margin: 20px auto;
+    width: 100%;
+    height: 30px;
+}
+.start_btn
+{
+    float: right;
+    margin: 0px auto;
+    width: 200px;
+}
+.reset_btn
+{
+    float: right;
+    margin: 0px auto;
+    width: 200px;
+}
+/*------Adapted Flip Function Code--Start----*/
+/* entire container, keeps perspective */
+.flip-container
+{
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -ms-perspective: 1000px;
+    perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+/* flip the pane when clicked */
+.flip-container.clicked .flipper
+{
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+body.ie .flip-container.clicked .flipper .front { display: none; }
+body.ie .flip-container.clicked .flipper .back { backface-visibility: visible; }
+.flip-container, .front, .back
+{
+    width: 120px;
+    height: 120px;
+}
+/* flip speed goes here */
+.flipper
+{
+    transition: 0.7s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    position: relative;
+}
+/* hide back of pane during swap */
+.front, .back
+{
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/* front pane, placed above back */
+.front
+{
+    z-index: 2;
+    /* for firefox 31 */
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+/* back, initially hidden pane */
+.back
+{
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+/*------Adapted Flip Function Code--End----*/
+@media only screen and (max-width: 640px)
+{
+h1
+{
+    font-size: 25px;
+}
+ul
+{
+    margin: 10px auto;
+    width: 100%;
+    height: 400px;
+}
+ul li
+{
+    width: 24.3%;
+    height: 98px;
+}
+#wrapper
+{
+    width: 100%;
+}
+.back, .front
+{
+    background-size: 100% 100%;
+    
+}
+#score_board
+{
+    margin: 20px auto;
+    width: 100%;
+    height: 100px;
+    border-left: none;
+    border-right: none;
+}
+#score_description
+{
+    margin: 40px 0px;
+    width: 200px;
+    font-size: 15px;
+}
+#score_keeper
+{
+    margin: 40px 0px;
+    width: 100px;
+    font-size: 30px;
+}
+#btn_box
+{
+    margin: 20px auto;
+    padding-left: 20px;
+    width: 100%;
+    height: 30px;
+}
+.start_btn
+{
+    margin-right: 25px;
+    width: 100px;
+}
+.reset_btn
+{
+    float: left;
+    width: 100px;
+}
+.flip-container, .front, .back
+{
+    width: 100%;
+    height: 100px;
+}
+
+}
